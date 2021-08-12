@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @authour winner
+ * @Date 2021/8/12 21:52
+ */
+public class _01_01_IsUnique {
+    public static boolean isUnique(String astr) {
+        if (astr == null) {
+            return false;
+        }
+
+        boolean[] charArr = new boolean[26];
+        char[] chars = astr.toCharArray();
+        for (char c : chars) {
+            if (charArr[c - 'a'] == false) {
+                charArr[c - 'a'] = true;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(_01_01_IsUnique.isUnique("abc"));
+    }
+}
